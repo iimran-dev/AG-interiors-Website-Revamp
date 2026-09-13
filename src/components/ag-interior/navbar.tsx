@@ -30,28 +30,30 @@ export function Navbar({ onOpenConsultation }: NavbarProps) {
           : "bg-transparent py-4 sm:py-5"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Brand Logo */}
-        <Logo size="sm" />
+      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 flex items-center justify-between">
+        {/* Left Side: Logo and Navigation links stay completely inside the cream half */}
+        <div className="flex items-center space-x-6 sm:space-x-8 lg:space-x-12">
+          <Logo size="md" />
 
-        {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center space-x-7 lg:space-x-9">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="text-[13px] font-sans font-medium text-[#2E2C29] tracking-wide hover:text-[#C5A065] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#C5A065] hover:after:w-full after:transition-all after:duration-300"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+          {/* Desktop Navigation Links */}
+          <nav className="hidden md:flex items-center space-x-5 lg:space-x-7">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="text-xs lg:text-[13px] font-sans font-medium text-[#2E2C29] tracking-wider hover:text-[#C5A065] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#C5A065] hover:after:w-full after:transition-all after:duration-300 whitespace-nowrap"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
 
         {/* Right Action Button */}
         <div className="hidden md:flex items-center space-x-4">
           <button
             onClick={onOpenConsultation}
-            className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#C5A065] text-[#1E1E1E] text-xs font-semibold tracking-wider uppercase shadow-sm hover:bg-[#B58E52] transition-all duration-300 active:scale-[0.98]"
+            className="group relative inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#D7B174] via-[#C8A265] to-[#B89053] text-[#1E1E1E] text-xs font-semibold tracking-wider shadow-sm hover:shadow-md transition-all duration-300 active:scale-[0.98]"
           >
             <span>Book a Consultation</span>
             <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />

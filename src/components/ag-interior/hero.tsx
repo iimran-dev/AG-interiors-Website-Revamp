@@ -14,173 +14,171 @@ export function Hero({ onOpenConsultation, onOpenVideo }: HeroProps) {
   const [activeTab, setActiveTab] = useState<"residential" | "commercial" | "turnkey">("residential");
   const [activeStep, setActiveStep] = useState("01");
 
-  const heroImage =
-    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=85&w=1600&auto=format&fit=crop";
+  const heroImage = "/images/hero-living-room.jpg";
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden bg-[#FAF8F5] flex items-center"
+      className="relative min-h-screen pt-24 lg:pt-0 bg-[#FBF9F4] text-[#1E1E1E] overflow-hidden flex flex-col lg:flex-row items-stretch"
     >
-      {/* Subtle architectural background ambiance */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#EBE4D5]/40 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-72 h-72 bg-[#DFD6C3]/30 rounded-full blur-3xl pointer-events-none" />
+      {/* ================= LEFT EDITORIAL COLUMN ================= */}
+      <div className="w-full lg:w-[53%] flex flex-col justify-between pt-12 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 px-6 sm:px-10 lg:pl-12 lg:pr-6 xl:pl-20 xl:pr-10 z-10">
+        
+        {/* Top spacer for navbar on desktop */}
+        <div className="hidden lg:block h-6" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
-          {/* Left Column (Content & Micro-indicators) */}
-          <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center">
-            
-            {/* Tag / Kicker */}
-            <div className="flex items-center gap-2 mb-4">
-              <span className="h-px w-6 bg-[#C5A065]" />
-              <span className="text-[11px] sm:text-xs font-sans uppercase tracking-[0.24em] text-[#C5A065] font-semibold">
-                Interiors That Feel Like Home
-              </span>
-            </div>
-
-            {/* Main Headline */}
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-[62px] xl:text-[66px] leading-[1.08] text-[#1E1E1E] font-medium tracking-tight mb-6">
-              Design <br />
-              Beyond Spaces. <br />
-              <span className="italic font-normal text-[#C5A065]">
-                For a Better You.
-              </span>
-            </h1>
-
-            {/* Subtitle Description */}
-            <p className="font-sans text-base sm:text-lg text-[#5A5650] max-w-lg leading-relaxed mb-8 sm:mb-10 font-light">
-              Thoughtfully designed residential and commercial interiors that blend aesthetics, functionality and your unique lifestyle.
-            </p>
-
-            {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4 sm:gap-6 mb-12">
-              <Link
-                href="#projects"
-                className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#C5A065] text-[#1E1E1E] text-xs sm:text-sm font-semibold tracking-wider uppercase shadow-md hover:bg-[#B58E52] transition-all duration-300 active:scale-[0.98]"
-              >
-                <span>Explore Our Work</span>
-                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
-
-              <button
-                onClick={onOpenVideo}
-                className="group inline-flex items-center gap-3 text-xs sm:text-sm font-sans font-medium text-[#2E2C29] hover:text-[#C5A065] transition-colors py-2"
-                aria-label="Watch AG Interior story video"
-              >
-                <div className="w-10 h-10 rounded-full border border-[#C5A065]/60 flex items-center justify-center bg-white/80 group-hover:bg-[#C5A065] group-hover:border-[#C5A065] transition-all duration-300 shadow-sm">
-                  <Play className="w-3.5 h-3.5 text-[#1E1E1E] fill-[#1E1E1E] group-hover:text-white group-hover:fill-white ml-0.5 transition-colors" />
-                </div>
-                <div className="text-left">
-                  <span className="block font-semibold">Watch Our Story</span>
-                  <span className="block text-[11px] text-[#7A756D] font-normal">(1:30)</span>
-                </div>
-              </button>
-            </div>
-
-            {/* Bottom Left Indicators & Scroll cue */}
-            <div className="pt-6 border-t border-[#E8E2D6] flex items-center justify-between max-w-md">
-              {/* Step indicator pagination */}
-              <div className="flex items-center gap-4">
-                {["01", "02", "03", "04"].map((step) => (
-                  <button
-                    key={step}
-                    onClick={() => setActiveStep(step)}
-                    className={`text-xs font-sans tracking-wider transition-all duration-300 ${
-                      activeStep === step
-                        ? "text-[#C5A065] font-bold scale-110"
-                        : "text-[#9E988E] hover:text-[#5A5650]"
-                    }`}
-                  >
-                    {step}
-                  </button>
-                ))}
-              </div>
-
-              {/* Scroll Indicator */}
-              <div className="flex items-center gap-2 text-[10px] font-sans uppercase tracking-[0.2em] text-[#8C867C]">
-                <span>SCROLL</span>
-                <span className="text-[9px] text-[#C5A065] lowercase tracking-normal">to explore</span>
-                <span className="h-4 w-px bg-[#C5A065]/60 animate-pulse" />
-              </div>
-            </div>
-
+        {/* Content Body */}
+        <div className="max-w-xl">
+          {/* Kicker / Subhead */}
+          <div className="flex items-center gap-2.5 mb-5">
+            <span className="h-[1.5px] w-6 bg-[#C5A065]" />
+            <span className="text-[11px] sm:text-xs font-sans uppercase tracking-[0.24em] text-[#C5A065] font-semibold">
+              Interiors That Feel Like Home
+            </span>
           </div>
 
-          {/* Right Column (Arched Showcase Window) */}
-          <div className="lg:col-span-6 xl:col-span-6 relative flex justify-center lg:justify-end">
-            
-            {/* Top Right Floating Badge */}
-            <div className="absolute -top-3 sm:-top-5 right-2 sm:right-6 z-20 pointer-events-none select-none">
-              <div className="bg-[#FAF8F5]/90 backdrop-blur-md px-3.5 py-4 rounded-xl border border-[#E5DFD4] shadow-sm flex flex-col items-center">
-                <span className="text-[9px] font-sans uppercase tracking-[0.22em] text-[#33312E] font-medium leading-tight writing-vertical text-center">
-                  SPACES PEOPLE LOVE LIVING IN
-                </span>
+          {/* Main Display Headline */}
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-[56px] xl:text-[66px] leading-[1.08] text-[#1E1E1E] font-medium tracking-tight mb-6">
+            Design <br />
+            Beyond Spaces. <br />
+            <span className="italic font-normal text-[#C5A065] drop-shadow-sm">
+              For a Better You.
+            </span>
+          </h1>
+
+          {/* Subtitle Description */}
+          <p className="font-sans text-sm sm:text-base lg:text-[17px] text-[#5A5650] leading-relaxed mb-8 sm:mb-10 font-light max-w-lg">
+            Thoughtfully designed residential and commercial interiors that blend aesthetics, functionality and your unique lifestyle.
+          </p>
+
+          {/* CTA Buttons Row */}
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6 mb-10">
+            {/* Primary Golden Bronze Button */}
+            <Link
+              href="#projects"
+              className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#A87932] via-[#C59A52] to-[#B3853E] text-white text-xs sm:text-sm font-semibold tracking-wider uppercase shadow-lg hover:shadow-xl hover:opacity-95 transition-all duration-300 active:scale-[0.98]"
+            >
+              <span>Explore Our Work</span>
+              <ArrowRight className="w-4 h-4 ml-0.5" />
+            </Link>
+
+            {/* Video Play Trigger */}
+            <button
+              onClick={onOpenVideo}
+              className="group inline-flex items-center gap-3 text-xs sm:text-sm font-sans font-medium text-[#2E2C29] hover:text-[#C5A065] transition-colors py-1"
+              aria-label="Watch AG Interior Story Video"
+            >
+              <div className="w-11 h-11 rounded-full border border-[#D5CEC2] flex items-center justify-center bg-white shadow-sm group-hover:border-[#C5A065] group-hover:scale-105 transition-all duration-300">
+                <Play className="w-4 h-4 text-[#1E1E1E] fill-[#1E1E1E] ml-0.5 group-hover:text-[#C5A065] group-hover:fill-[#C5A065] transition-colors" />
               </div>
-            </div>
-
-            {/* Arched Window Outer Frame */}
-            <div className="relative w-full max-w-[480px] lg:max-w-[530px] aspect-[4/5] rounded-t-[220px] rounded-b-3xl p-3 sm:p-4 bg-gradient-to-b from-[#EAE3D6] to-[#FAF8F5] border border-[#E2DAD0] shadow-2xl">
-              
-              {/* Arched Inner Container */}
-              <div className="relative w-full h-full rounded-t-[200px] rounded-b-2xl overflow-hidden group">
-                <Image
-                  src={heroImage}
-                  alt="AG Interior Luxury Living Room Architecture"
-                  fill
-                  priority
-                  className="object-cover object-center transition-transform duration-1000 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 550px"
-                />
-
-                {/* Soft ambient lighting gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/15 pointer-events-none" />
-
-                {/* Bottom Overlay Category Selector Pill */}
-                <div className="absolute bottom-5 left-4 right-4 z-10 flex justify-center">
-                  <div className="bg-[#181716]/90 backdrop-blur-md text-white px-4 py-2 rounded-full border border-white/10 shadow-lg flex items-center gap-3 text-[11px] font-sans tracking-wide">
-                    <button
-                      onClick={() => setActiveTab("residential")}
-                      className={`transition-colors ${
-                        activeTab === "residential"
-                          ? "text-[#C5A065] font-semibold"
-                          : "text-white/70 hover:text-white"
-                      }`}
-                    >
-                      Residential
-                    </button>
-                    <span className="text-white/30">|</span>
-                    <button
-                      onClick={() => setActiveTab("commercial")}
-                      className={`transition-colors ${
-                        activeTab === "commercial"
-                          ? "text-[#C5A065] font-semibold"
-                          : "text-white/70 hover:text-white"
-                      }`}
-                    >
-                      Commercial
-                    </button>
-                    <span className="text-white/30">|</span>
-                    <button
-                      onClick={() => setActiveTab("turnkey")}
-                      className={`transition-colors ${
-                        activeTab === "turnkey"
-                          ? "text-[#C5A065] font-semibold"
-                          : "text-white/70 hover:text-white"
-                      }`}
-                    >
-                      Turnkey Interiors
-                    </button>
-                  </div>
-                </div>
-
+              <div className="text-left">
+                <span className="block font-semibold text-[#1E1E1E] leading-tight">Watch Our Story</span>
+                <span className="block text-[11px] text-[#7A756D] font-normal">2 min</span>
               </div>
-            </div>
+            </button>
+          </div>
+        </div>
 
+        {/* Bottom Rail: Pagination Indicators & Scroll Cue */}
+        <div className="pt-6 border-t border-[#EAE3D5] flex items-center justify-between max-w-xl">
+          {/* Step numbers: 01, 02, 03, ○, 0 */}
+          <div className="flex items-center gap-5 text-xs font-sans tracking-widest text-[#9E988E]">
+            {["01", "02", "03"].map((step) => (
+              <button
+                key={step}
+                onClick={() => setActiveStep(step)}
+                className={`transition-all duration-300 ${
+                  activeStep === step
+                    ? "text-[#C5A065] font-bold scale-110"
+                    : "hover:text-[#4A463F]"
+                }`}
+              >
+                {step}
+              </button>
+            ))}
+            <span className="w-2 h-2 rounded-full border border-[#C5A065] inline-block" />
+            <span className="hover:text-[#4A463F] cursor-pointer">0</span>
+          </div>
+
+          {/* Scroll Cue */}
+          <div className="flex items-center gap-2.5 text-[10px] font-sans uppercase tracking-[0.22em] text-[#8C867C]">
+            <span className="font-semibold text-[#4A463F]">SCROLL</span>
+            <span className="text-[#C5A065] lowercase tracking-normal">to explore</span>
+            <div className="h-5 w-[1.5px] bg-[#C5A065] animate-pulse ml-0.5" />
+          </div>
+        </div>
+
+      </div>
+
+      {/* ================= RIGHT ARCHITECTURAL LIVING ROOM COLUMN ================= */}
+      <div className="w-full lg:w-[47%] relative min-h-[480px] sm:min-h-[580px] lg:min-h-full flex items-stretch overflow-hidden">
+        
+        {/* Grand Sweeping Golden Arch Container */}
+        <div className="relative w-full h-full lg:rounded-tl-[380px] overflow-hidden border-t-2 lg:border-t-0 lg:border-l-4 border-[#C5A065] shadow-2xl bg-[#EDE7DC]">
+          
+          {/* Living Room Image */}
+          <Image
+            src={heroImage}
+            alt="AG Interior Luxury Living Room Showcase"
+            fill
+            priority
+            className="object-cover object-center scale-100 lg:scale-[1.02] hover:scale-105 transition-transform duration-1000 ease-out"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+
+          {/* Delicate Warm Ambient Lighting Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/15 pointer-events-none" />
+
+          {/* Wall Badge Text: SPACES PEOPLE LOVE LIVING IN (Repositioned down to avoid navbar button overlap) */}
+          <div className="absolute top-44 sm:top-52 lg:top-64 xl:top-72 right-6 sm:right-10 z-20 pointer-events-none select-none text-right">
+            <div className="flex flex-col space-y-1 text-xs sm:text-[13px] font-sans font-semibold tracking-[0.26em] text-white/95 uppercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
+              <span>SPACES</span>
+              <span>PEOPLE</span>
+              <span>LOVE</span>
+              <span className="text-[#EAD5AA]">LIVING IN</span>
+            </div>
+          </div>
+
+          {/* Category Selector Pill (Bottom-Right) */}
+          <div className="absolute bottom-6 sm:bottom-8 right-6 sm:right-10 z-20">
+            <div className="bg-[#181716]/90 backdrop-blur-md text-white px-5 py-2.5 rounded-full border border-white/15 shadow-2xl flex items-center gap-3 sm:gap-4 text-xs font-sans tracking-wide">
+              <button
+                onClick={() => setActiveTab("residential")}
+                className={`transition-colors duration-200 ${
+                  activeTab === "residential"
+                    ? "text-[#C5A065] font-semibold"
+                    : "text-white/70 hover:text-white"
+                }`}
+              >
+                Residential
+              </button>
+              <span className="text-white/30">|</span>
+              <button
+                onClick={() => setActiveTab("commercial")}
+                className={`transition-colors duration-200 ${
+                  activeTab === "commercial"
+                    ? "text-[#C5A065] font-semibold"
+                    : "text-white/70 hover:text-white"
+                }`}
+              >
+                Commercial
+              </button>
+              <span className="text-white/30">|</span>
+              <button
+                onClick={() => setActiveTab("turnkey")}
+                className={`transition-colors duration-200 ${
+                  activeTab === "turnkey"
+                    ? "text-[#C5A065] font-semibold"
+                    : "text-white/70 hover:text-white"
+                }`}
+              >
+                Turnkey Interiors
+              </button>
+            </div>
           </div>
 
         </div>
+
       </div>
     </section>
   );
