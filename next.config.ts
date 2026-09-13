@@ -16,6 +16,8 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   reactStrictMode: false,
+  devIndicators: false,
+  basePath: "/ag-interiors"
 };
 
 export default nextConfig;
