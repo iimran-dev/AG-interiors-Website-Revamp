@@ -19,7 +19,7 @@ export function TestimonialsSection() {
   const current = TESTIMONIALS[currentIndex];
 
   return (
-    <section className="py-20 sm:py-28 bg-[#FAF8F5] border-t border-[#ECE7DF] relative overflow-hidden">
+    <section className="py-16 sm:py-24 lg:py-28 bg-[#FAF8F5] border-t border-[#ECE7DF] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
@@ -35,16 +35,16 @@ export function TestimonialsSection() {
             </div>
 
             {/* Headline */}
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-[42px] leading-tight text-[#1E1E1E] font-medium tracking-tight mb-8">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-[42px] leading-tight text-[#1E1E1E] font-medium tracking-tight mb-6 sm:mb-8">
               Homes Designed. <br />
               Lives Enriched.
             </h2>
 
-            {/* Prev / Next Circular Arrows */}
+            {/* Prev / Next Circular Arrows with Accessible 44px Target */}
             <div className="flex items-center gap-3">
               <button
                 onClick={handlePrev}
-                className="w-10 h-10 rounded-full border border-[#D5CEC2] flex items-center justify-center text-[#1E1E1E] hover:border-[#C5A065] hover:bg-[#C5A065] hover:text-white transition-all duration-300"
+                className="w-11 h-11 rounded-full border border-[#D5CEC2] flex items-center justify-center text-[#1E1E1E] hover:border-[#C5A065] hover:bg-[#C5A065] hover:text-white transition-all duration-300 active:scale-95 shadow-sm"
                 aria-label="Previous client testimonial"
               >
                 <ArrowLeft className="w-4 h-4" />
@@ -52,7 +52,7 @@ export function TestimonialsSection() {
 
               <button
                 onClick={handleNext}
-                className="w-10 h-10 rounded-full border border-[#D5CEC2] flex items-center justify-center text-[#1E1E1E] hover:border-[#C5A065] hover:bg-[#C5A065] hover:text-white transition-all duration-300"
+                className="w-11 h-11 rounded-full border border-[#D5CEC2] flex items-center justify-center text-[#1E1E1E] hover:border-[#C5A065] hover:bg-[#C5A065] hover:text-white transition-all duration-300 active:scale-95 shadow-sm"
                 aria-label="Next client testimonial"
               >
                 <ArrowRight className="w-4 h-4" />
@@ -62,10 +62,10 @@ export function TestimonialsSection() {
           </div>
 
           {/* Right Column: Testimonial Card + Atmospheric Interior Photo */}
-          <div className="lg:col-span-8 xl:col-span-8 grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
+          <div className="lg:col-span-8 xl:col-span-8 grid grid-cols-1 sm:grid-cols-12 gap-6 items-stretch">
             
             {/* Testimonial Quote Card */}
-            <div className="sm:col-span-7 bg-white rounded-2xl p-6 sm:p-8 border border-[#E8E2D6] shadow-sm relative flex flex-col justify-between min-h-[280px]">
+            <div className="sm:col-span-7 bg-white rounded-2xl p-6 sm:p-8 border border-[#E8E2D6] shadow-sm relative flex flex-col justify-between min-h-[260px]">
               
               {/* Top Quote Mark Icon */}
               <div className="text-4xl sm:text-5xl font-display text-[#C5A065]/70 leading-none select-none">
@@ -73,7 +73,7 @@ export function TestimonialsSection() {
               </div>
 
               {/* Quote text */}
-              <p className="font-sans text-sm sm:text-base text-[#3A3835] font-light leading-relaxed my-4">
+              <p className="font-sans text-sm sm:text-base text-[#3A3835] font-light leading-relaxed my-4 min-h-[72px]">
                 {current.quote}
               </p>
 
@@ -106,7 +106,7 @@ export function TestimonialsSection() {
             </div>
 
             {/* Beside: Atmospheric Warm Dining Interior Photo */}
-            <div className="sm:col-span-5 relative aspect-[4/4.5] rounded-2xl overflow-hidden border border-[#E2DBD0] shadow-sm group">
+            <div className="sm:col-span-5 relative aspect-[4/3] sm:aspect-auto sm:min-h-[260px] rounded-2xl overflow-hidden border border-[#E2DBD0] shadow-sm group bg-[#F0ECE4]">
               <Image
                 src={current.interiorImage}
                 alt="Client Residence Interior"

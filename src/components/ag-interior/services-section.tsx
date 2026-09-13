@@ -2,8 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { SERVICES } from "./data";
 
 interface ServicesSectionProps {
@@ -12,11 +11,11 @@ interface ServicesSectionProps {
 
 export function ServicesSection({ onSelectService }: ServicesSectionProps) {
   return (
-    <section id="services" className="py-20 sm:py-28 bg-[#FAF8F5] border-t border-[#ECE7DF]">
+    <section id="services" className="py-16 sm:py-24 lg:py-28 bg-[#FAF8F5] border-t border-[#ECE7DF]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 mb-3">
             <span className="h-px w-6 bg-[#C5A065]" />
             <span className="text-[11px] font-sans uppercase tracking-[0.24em] text-[#C5A065] font-semibold">
@@ -30,15 +29,15 @@ export function ServicesSection({ onSelectService }: ServicesSectionProps) {
           </h2>
         </div>
 
-        {/* 4 Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
+        {/* 4 Cards Grid - Aligned & Responsive */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 lg:gap-7">
           {SERVICES.map((service) => (
             <div
               key={service.id}
-              className="group flex flex-col bg-white rounded-2xl p-3 border border-[#E8E2D6] hover:border-[#C5A065]/50 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1.5"
+              className="group flex flex-col justify-between bg-white rounded-2xl p-3 sm:p-3.5 border border-[#E8E2D6] hover:border-[#C5A065]/50 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1.5"
             >
-              {/* Card Image Container with rounded inner corners */}
-              <div className="relative aspect-[4/3.2] w-full rounded-xl overflow-hidden mb-4 bg-[#F2EDE4]">
+              {/* Card Image Container */}
+              <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden mb-4 bg-[#F2EDE4]">
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -49,21 +48,21 @@ export function ServicesSection({ onSelectService }: ServicesSectionProps) {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
-              {/* Card Footer: Title, Description & Arrow Button */}
-              <div className="px-2 pb-2 flex items-center justify-between mt-auto">
-                <div>
-                  <h3 className="font-display text-lg font-medium text-[#1E1E1E] group-hover:text-[#C5A065] transition-colors">
+              {/* Card Footer: Aligned Titles, Subtitles & Button */}
+              <div className="px-2 pb-2 flex items-center justify-between gap-2 min-h-[58px]">
+                <div className="flex-1">
+                  <h3 className="font-display text-base sm:text-lg font-medium text-[#1E1E1E] group-hover:text-[#C5A065] transition-colors leading-snug">
                     {service.title}
                   </h3>
-                  <p className="font-sans text-xs text-[#7A756C] font-light mt-0.5">
+                  <p className="font-sans text-xs text-[#7A756C] font-light mt-0.5 leading-snug">
                     {service.description}
                   </p>
                 </div>
 
-                {/* Circular Arrow Button */}
+                {/* Circular Arrow Button with accessible 38px tap target */}
                 <button
                   onClick={() => onSelectService?.(service.title)}
-                  className="w-9 h-9 rounded-full border border-[#DFD8CC] flex items-center justify-center text-[#1E1E1E] group-hover:border-[#C5A065] group-hover:bg-[#C5A065] group-hover:text-white transition-all duration-300 flex-shrink-0 ml-2"
+                  className="w-10 h-10 rounded-full border border-[#DFD8CC] flex items-center justify-center text-[#1E1E1E] group-hover:border-[#C5A065] group-hover:bg-[#C5A065] group-hover:text-white transition-all duration-300 flex-shrink-0"
                   aria-label={`View details for ${service.title}`}
                 >
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" />

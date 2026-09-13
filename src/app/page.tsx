@@ -26,7 +26,7 @@ export default function Home() {
   const handleCloseVideo = () => setVideoOpen(false);
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#FAF8F5] text-[#1E1E1E] antialiased selection:bg-[#C5A065] selection:text-[#1E1E1E]">
+    <div className="flex min-h-screen flex-col bg-[#FAF8F5] text-[#1E1E1E] antialiased selection:bg-[#C5A065] selection:text-[#1E1E1E] overflow-x-hidden w-full">
       {/* 1. Header & Navigation */}
       <Navbar onOpenConsultation={handleOpenConsultation} />
 

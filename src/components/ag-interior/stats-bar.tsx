@@ -1,5 +1,4 @@
 import React from "react";
-import { Building2, Compass, RefreshCw, MapPin } from "lucide-react";
 
 export function StatsBar() {
   const stats = [
@@ -8,11 +7,11 @@ export function StatsBar() {
       label: "Projects Completed",
       icon: (
         <svg
-          className="w-7 h-7 text-[#C5A065]"
+          className="w-6 h-6 text-[#C5A065]"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          strokeWidth="1.4"
+          strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
         >
@@ -31,11 +30,11 @@ export function StatsBar() {
       label: "Custom Designs",
       icon: (
         <svg
-          className="w-7 h-7 text-[#C5A065]"
+          className="w-6 h-6 text-[#C5A065]"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          strokeWidth="1.4"
+          strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
         >
@@ -53,11 +52,11 @@ export function StatsBar() {
       label: "Execution —",
       icon: (
         <svg
-          className="w-7 h-7 text-[#C5A065]"
+          className="w-6 h-6 text-[#C5A065]"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          strokeWidth="1.4"
+          strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
         >
@@ -73,11 +72,11 @@ export function StatsBar() {
       label: "Serving Across Tamil Nadu",
       icon: (
         <svg
-          className="w-7 h-7 text-[#C5A065]"
+          className="w-6 h-6 text-[#C5A065]"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          strokeWidth="1.4"
+          strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
         >
@@ -89,21 +88,29 @@ export function StatsBar() {
   ];
 
   return (
-    <section className="bg-white border-y border-[#ECE7DF] py-7 sm:py-9">
+    <section className="bg-white border-y border-[#ECE7DF] py-6 sm:py-8 lg:py-9">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-[#ECE7DF]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-0">
           {stats.map((item, index) => (
             <div
               key={index}
               className={`flex items-center gap-4 ${
-                index > 0 ? "pt-4 md:pt-0 md:pl-6 lg:pl-8" : ""
+                index > 0 ? "lg:border-l lg:border-[#ECE7DF] lg:pl-8 xl:pl-10" : ""
+              } ${
+                index % 2 === 1 && index !== 0
+                  ? "sm:border-l sm:border-[#ECE7DF] sm:pl-6 lg:border-l-0 lg:pl-0"
+                  : ""
+              } ${
+                index > 0 ? "pt-4 sm:pt-0" : ""
+              } ${
+                index >= 2 ? "sm:border-t sm:border-[#ECE7DF] sm:pt-6 lg:border-t-0 lg:pt-0" : ""
               }`}
             >
-              <div className="w-12 h-12 rounded-full bg-[#FAF8F5] border border-[#E8E1D5] flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 rounded-full bg-[#FAF8F5] border border-[#E8E1D5] flex items-center justify-center flex-shrink-0 shadow-sm">
                 {item.icon}
               </div>
               <div>
-                <span className="block font-display text-xl sm:text-2xl font-semibold text-[#1E1E1E] leading-tight">
+                <span className="block font-display text-xl sm:text-2xl font-semibold text-[#1E1E1E] leading-tight tracking-tight">
                   {item.value}
                 </span>
                 <span className="block font-sans text-xs text-[#757067] font-normal mt-0.5">

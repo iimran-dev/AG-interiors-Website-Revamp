@@ -39,8 +39,8 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && handleReset()}>
-      <DialogContent className="max-w-lg bg-[#FAF8F5] border-[#E5DFD5] text-[#1E1E1E] p-0 overflow-hidden shadow-2xl rounded-2xl">
-        <div className="relative p-6 sm:p-8">
+      <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto bg-[#FAF8F5] border-[#E5DFD5] text-[#1E1E1E] p-0 shadow-2xl rounded-2xl">
+        <div className="relative p-5 sm:p-8">
           {/* Header */}
           <DialogHeader className="mb-6">
             <div className="flex items-center gap-2 mb-2">
