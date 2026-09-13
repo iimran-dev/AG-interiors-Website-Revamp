@@ -15,7 +15,7 @@ export function ServicesSection({ onSelectService }: ServicesSectionProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+        <div data-animate="fade-up" className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 mb-3">
             <span className="h-px w-6 bg-[#C5A065]" />
             <span className="text-[11px] font-sans uppercase tracking-[0.24em] text-[#C5A065] font-semibold">
@@ -30,11 +30,15 @@ export function ServicesSection({ onSelectService }: ServicesSectionProps) {
         </div>
 
         {/* 4 Cards Grid - Aligned & Responsive */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 lg:gap-7">
+        <div
+          data-animate="stagger-group"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 lg:gap-7"
+        >
           {SERVICES.map((service) => (
             <div
               key={service.id}
-              className="group flex flex-col justify-between bg-white rounded-2xl p-3 sm:p-3.5 border border-[#E8E2D6] hover:border-[#C5A065]/50 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1.5"
+              data-animate="stagger-item"
+              className="group relative flex flex-col justify-between bg-white rounded-2xl p-3 sm:p-3.5 border border-[#E8E2D6] hover:border-[#C5A065]/50 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1.5 overflow-hidden"
             >
               {/* Card Image Container */}
               <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden mb-4 bg-[#F2EDE4]">
@@ -42,10 +46,10 @@ export function ServicesSection({ onSelectService }: ServicesSectionProps) {
                   src={service.image}
                   alt={service.title}
                   fill
-                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-108"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
               {/* Card Footer: Aligned Titles, Subtitles & Button */}
@@ -65,9 +69,12 @@ export function ServicesSection({ onSelectService }: ServicesSectionProps) {
                   className="w-10 h-10 rounded-full border border-[#DFD8CC] flex items-center justify-center text-[#1E1E1E] group-hover:border-[#C5A065] group-hover:bg-[#C5A065] group-hover:text-white transition-all duration-300 flex-shrink-0"
                   aria-label={`View details for ${service.title}`}
                 >
-                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:rotate-[-45deg]" />
                 </button>
               </div>
+
+              {/* Subtle bottom golden accent bar on hover */}
+              <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C5A065] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
           ))}
         </div>

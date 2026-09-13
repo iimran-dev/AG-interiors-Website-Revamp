@@ -13,7 +13,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-12 sm:mb-14">
+        <div data-animate="fade-up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-12 sm:mb-14">
           
           {/* Col 1: Brand & Slogan (3 cols) */}
           <div className="lg:col-span-3 flex flex-col items-start">
@@ -160,7 +160,10 @@ export function Footer() {
           {/* Col 5: Arched Decorative Photo & Script Text (2 cols) */}
           <div className="lg:col-span-2 flex items-center gap-4 sm:col-span-2 lg:justify-end">
             {/* Arched small frame */}
-            <div className="relative w-20 sm:w-24 h-32 sm:h-36 rounded-t-full rounded-b-lg overflow-hidden border border-[#DFD8CC] shadow-sm flex-shrink-0 bg-[#F0ECE4]">
+            <div
+              data-animate="arch-reveal"
+              className="relative w-20 sm:w-24 h-32 sm:h-36 rounded-t-full rounded-b-lg overflow-hidden border border-[#DFD8CC] shadow-sm flex-shrink-0 bg-[#F0ECE4]"
+            >
               <Image
                 src={archImage}
                 alt="Botanical Architecture Decor"

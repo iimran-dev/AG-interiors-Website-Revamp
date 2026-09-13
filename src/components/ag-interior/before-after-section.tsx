@@ -8,10 +8,8 @@ export function BeforeAfterSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
 
-  const beforeImage =
-    "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?q=80&w=1400&auto=format&fit=crop";
-  const afterImage =
-    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=85&w=1400&auto=format&fit=crop";
+  const beforeImage = "/images/transformation-before-aligned.png";
+  const afterImage = "/images/transformation-after.png";
 
   const updatePosition = useCallback((clientX: number) => {
     if (!containerRef.current) return;
@@ -55,7 +53,7 @@ export function BeforeAfterSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
           {/* Left Column: Heading, Subtitle & Badge */}
-          <div className="lg:col-span-4 xl:col-span-4">
+          <div data-animate="fade-up" className="lg:col-span-4 xl:col-span-4">
             
             {/* Kicker */}
             <div className="flex items-center gap-2 mb-3 sm:mb-4">
@@ -85,7 +83,7 @@ export function BeforeAfterSection() {
           </div>
 
           {/* Right Column: Interactive Slider Container */}
-          <div className="lg:col-span-8 xl:col-span-8 relative">
+          <div data-animate="fade-up" className="lg:col-span-8 xl:col-span-8 relative">
             
             {/* Calligraphy Headline Accent - Responsively Positioned */}
             <div className="flex justify-end mb-3 sm:mb-4 pr-2 select-none pointer-events-none">
@@ -105,7 +103,7 @@ export function BeforeAfterSection() {
               onMouseMove={handleMouseMove}
               onTouchStart={(e) => updatePosition(e.touches[0].clientX)}
               onTouchMove={handleTouchMove}
-              className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl select-none cursor-ew-resize border border-white/15 bg-[#222]"
+              className="relative w-full aspect-[16/9] sm:aspect-[16/7] md:aspect-[16/6.5] rounded-2xl overflow-hidden shadow-2xl select-none cursor-ew-resize border border-white/15 bg-[#222]"
               style={{ touchAction: "none" }}
             >
               {/* "AFTER" Image (Full background layer) */}
@@ -137,9 +135,6 @@ export function BeforeAfterSection() {
                     className="object-cover object-center"
                     sizes="(max-width: 1024px) 100vw, 850px"
                   />
-                  {/* Subtle dark tint for raw room */}
-                  <div className="absolute inset-0 bg-black/25" />
-                  
                   {/* BEFORE Pill Label */}
                   <div className="absolute bottom-4 sm:bottom-5 left-4 sm:left-5 z-10 px-3 py-1 rounded-full bg-[#181716]/85 backdrop-blur-md border border-white/20 text-[10px] font-sans font-semibold tracking-widest text-[#E5E0D5] uppercase">
                     BEFORE

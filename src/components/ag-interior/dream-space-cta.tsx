@@ -18,8 +18,11 @@ export function DreamSpaceCTA({ onOpenConsultation }: DreamSpaceCTAProps) {
     <section className="relative bg-[#161514] text-white py-16 sm:py-20 lg:py-24 overflow-hidden">
       
       {/* Decorative Left Foliage Mask */}
-      <div className="absolute top-0 bottom-0 left-0 w-1/4 sm:w-1/5 pointer-events-none opacity-20 sm:opacity-30 overflow-hidden">
-        <div className="relative w-full h-full">
+      <div
+        data-animate="parallax"
+        className="absolute top-0 bottom-0 left-0 w-1/4 sm:w-1/5 pointer-events-none opacity-20 sm:opacity-30 overflow-hidden"
+      >
+        <div className="relative w-full h-[120%] -top-[10%]">
           <Image
             src={leftFoliage}
             alt="Interior Botanical Greenery"
@@ -32,8 +35,11 @@ export function DreamSpaceCTA({ onOpenConsultation }: DreamSpaceCTAProps) {
       </div>
 
       {/* Decorative Right Foliage Mask */}
-      <div className="absolute top-0 bottom-0 right-0 w-1/4 sm:w-1/5 pointer-events-none opacity-20 sm:opacity-30 overflow-hidden">
-        <div className="relative w-full h-full">
+      <div
+        data-animate="parallax"
+        className="absolute top-0 bottom-0 right-0 w-1/4 sm:w-1/5 pointer-events-none opacity-20 sm:opacity-30 overflow-hidden"
+      >
+        <div className="relative w-full h-[120%] -top-[10%]">
           <Image
             src={rightFoliage}
             alt="Interior Botanical Greenery"
@@ -49,7 +55,7 @@ export function DreamSpaceCTA({ onOpenConsultation }: DreamSpaceCTAProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center justify-between">
           
           {/* Left: Headline & Description */}
-          <div className="lg:col-span-7">
+          <div data-animate="fade-up" className="lg:col-span-7">
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-[#FAF7F2] mb-4 sm:mb-5">
               Let&apos;s Design Your <br />
               Dream Space
@@ -60,20 +66,20 @@ export function DreamSpaceCTA({ onOpenConsultation }: DreamSpaceCTAProps) {
           </div>
 
           {/* Right: CTA Button & Phone Call Link */}
-          <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col items-stretch sm:items-center lg:items-end gap-4 sm:gap-5">
+          <div data-animate="fade-up" className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col items-stretch sm:items-center lg:items-end gap-4 sm:gap-5">
             <button
               onClick={onOpenConsultation}
-              className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#C5A065] text-[#1E1E1E] text-xs sm:text-sm font-semibold tracking-wider uppercase hover:bg-[#B58E52] transition-all duration-300 shadow-xl active:scale-[0.98] w-full sm:w-auto"
+              className="group relative inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-[#C5A065] via-[#D5B075] to-[#B58E52] text-[#1E1E1E] text-xs sm:text-sm font-semibold tracking-wider uppercase hover:opacity-95 transition-all duration-300 shadow-xl active:scale-[0.98] w-full sm:w-auto overflow-hidden"
             >
               <span>Book a Free Consultation</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </button>
 
             <a
               href="tel:+919585544446"
               className="inline-flex items-center justify-center gap-3 text-sm sm:text-base text-[#FAF7F2] hover:text-[#C5A065] transition-colors py-1 group"
             >
-              <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center bg-white/5 group-hover:border-[#C5A065] group-hover:bg-[#C5A065]/10 transition-colors flex-shrink-0">
+              <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center bg-white/5 group-hover:border-[#C5A065] group-hover:bg-[#C5A065]/10 group-hover:scale-105 transition-all duration-300 flex-shrink-0">
                 <Phone className="w-4 h-4 text-[#C5A065]" />
               </div>
               <span className="font-sans font-medium tracking-wide">

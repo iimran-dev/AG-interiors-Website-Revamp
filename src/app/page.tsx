@@ -12,6 +12,7 @@ import { ProcessSection } from "@/components/ag-interior/process-section";
 import { TestimonialsSection } from "@/components/ag-interior/testimonials-section";
 import { DreamSpaceCTA } from "@/components/ag-interior/dream-space-cta";
 import { Footer } from "@/components/ag-interior/footer";
+import { MotionWrapper } from "@/components/ag-interior/motion-wrapper";
 import { ConsultationModal } from "@/components/ag-interior/consultation-modal";
 import { VideoModal } from "@/components/ag-interior/video-modal";
 
@@ -30,40 +31,42 @@ export default function Home() {
       {/* 1. Header & Navigation */}
       <Navbar onOpenConsultation={handleOpenConsultation} />
 
-      <main className="flex-1">
-        {/* 2. Hero Section with Arched Living Showcase */}
-        <Hero
-          onOpenConsultation={handleOpenConsultation}
-          onOpenVideo={handleOpenVideo}
-        />
+      <MotionWrapper>
+        <main className="flex-1">
+          {/* 2. Hero Section with Arched Living Showcase */}
+          <Hero
+            onOpenConsultation={handleOpenConsultation}
+            onOpenVideo={handleOpenVideo}
+          />
 
-        {/* 3. 4-Column Trust Stats Bar */}
-        <StatsBar />
+          {/* 3. 4-Column Trust Stats Bar */}
+          <StatsBar />
 
-        {/* 4. About AG Interior with Arched Dining Room & Badges */}
-        <AboutSection />
+          {/* 4. About AG Interior with Arched Dining Room & Badges */}
+          <AboutSection />
 
-        {/* 5. Complete Interior Solutions (4 Service Cards) */}
-        <ServicesSection onSelectService={() => handleOpenConsultation()} />
+          {/* 5. Complete Interior Solutions (4 Service Cards) */}
+          <ServicesSection onSelectService={() => handleOpenConsultation()} />
 
-        {/* 6. Interactive Before & After Transformation Slider */}
-        <BeforeAfterSection />
+          {/* 6. Interactive Before & After Transformation Slider */}
+          <BeforeAfterSection />
 
-        {/* 7. Featured Projects Bento Grid with Category Filter Tabs */}
-        <FeaturedProjects onOpenConsultation={handleOpenConsultation} />
+          {/* 7. Featured Projects Bento Grid with Category Filter Tabs */}
+          <FeaturedProjects onOpenConsultation={handleOpenConsultation} />
 
-        {/* 8. 5-Step Process Roadmap */}
-        <ProcessSection />
+          {/* 8. 5-Step Process Roadmap */}
+          <ProcessSection />
 
-        {/* 9. Client Testimonial & Atmosphere */}
-        <TestimonialsSection />
+          {/* 9. Client Testimonial & Atmosphere */}
+          <TestimonialsSection />
 
-        {/* 10. Let's Design Your Dream Space (Framed Greenery CTA) */}
-        <DreamSpaceCTA onOpenConsultation={handleOpenConsultation} />
-      </main>
+          {/* 10. Let's Design Your Dream Space (Framed Greenery CTA) */}
+          <DreamSpaceCTA onOpenConsultation={handleOpenConsultation} />
+        </main>
 
-      {/* 11. Luxury Arched Footer */}
-      <Footer />
+        {/* 11. Luxury Arched Footer */}
+        <Footer />
+      </MotionWrapper>
 
       {/* Interactive Modals */}
       <ConsultationModal

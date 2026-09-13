@@ -21,7 +21,7 @@ export function AboutSection() {
           <div className="lg:col-span-5 relative w-full max-w-md mx-auto lg:max-w-none">
             
             {/* Floating Cursive Script Accent - Positioned safely within bounds */}
-            <div className="absolute -top-6 left-2 sm:-left-4 z-20 pointer-events-none select-none">
+            <div className="absolute -top-6 left-2 sm:-left-4 z-20 pointer-events-none select-none transition-transform duration-500 hover:scale-105">
               <div className="transform -rotate-6">
                 <span className="font-script text-3xl sm:text-5xl text-[#C5A065] drop-shadow-sm block leading-none">
                   Thoughtful
@@ -33,7 +33,10 @@ export function AboutSection() {
             </div>
 
             {/* Arched Image Container */}
-            <div className="relative w-full aspect-[3.6/5] rounded-t-[160px] sm:rounded-t-[200px] rounded-b-2xl overflow-hidden border border-[#E8E2D6] shadow-xl group bg-[#F0ECE4]">
+            <div
+              data-animate="arch-reveal"
+              className="relative w-full aspect-[3.6/5] rounded-t-[160px] sm:rounded-t-[200px] rounded-b-2xl overflow-hidden border border-[#E8E2D6] shadow-xl group bg-[#F0ECE4]"
+            >
               <Image
                 src={diningImage}
                 alt="AG Interior Dining Space Architecture"
@@ -47,7 +50,7 @@ export function AboutSection() {
           </div>
 
           {/* Right Column: About Content, Secondary Image & Badges */}
-          <div className="lg:col-span-7 flex flex-col justify-center">
+          <div data-animate="fade-up" className="lg:col-span-7 flex flex-col justify-center">
             
             {/* Tag / Kicker */}
             <div className="flex items-center gap-2 mb-3">
@@ -80,7 +83,7 @@ export function AboutSection() {
             </div>
 
             {/* Lower Composition: Secondary Image + Badges */}
-            <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center pt-6 border-t border-[#EAE4D9]">
+            <div data-animate="fade-up" className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center pt-6 border-t border-[#EAE4D9]">
               
               {/* Secondary Armchair Image */}
               <div className="sm:col-span-5 relative aspect-[4/4.8] max-w-[220px] sm:max-w-none rounded-xl overflow-hidden border border-[#E2DBD0] shadow-md group bg-[#F0ECE4]">
@@ -97,7 +100,7 @@ export function AboutSection() {
               <div className="sm:col-span-7 flex items-center gap-6 sm:gap-8">
                 
                 {/* Circular Badge: SPACES PEOPLE LOVE DELIVER */}
-                <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full border border-[#D5CEC2] p-1 flex items-center justify-center bg-white/90 shadow-sm flex-shrink-0">
+                <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full border border-[#D5CEC2] p-1 flex items-center justify-center bg-white/90 shadow-sm flex-shrink-0 group hover:rotate-12 transition-transform duration-700">
                   <div className="w-full h-full rounded-full border border-dashed border-[#C5A065]/60 flex flex-col items-center justify-center p-2 text-center">
                     <span className="text-[7.5px] sm:text-[8px] font-sans uppercase tracking-[0.2em] text-[#6B655B] font-semibold leading-tight">
                       SPACES

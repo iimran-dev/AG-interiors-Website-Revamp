@@ -88,13 +88,17 @@ export function StatsBar() {
   ];
 
   return (
-    <section className="bg-white border-y border-[#ECE7DF] py-6 sm:py-8 lg:py-9">
+    <section className="bg-white border-y border-[#ECE7DF] py-6 sm:py-8 lg:py-9 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-0">
+        <div
+          data-animate="stagger-group"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-0"
+        >
           {stats.map((item, index) => (
             <div
               key={index}
-              className={`flex items-center gap-4 ${
+              data-animate="stagger-item"
+              className={`group flex items-center gap-4 transition-transform duration-300 hover:translate-x-1 ${
                 index > 0 ? "lg:border-l lg:border-[#ECE7DF] lg:pl-8 xl:pl-10" : ""
               } ${
                 index % 2 === 1 && index !== 0
@@ -106,11 +110,11 @@ export function StatsBar() {
                 index >= 2 ? "sm:border-t sm:border-[#ECE7DF] sm:pt-6 lg:border-t-0 lg:pt-0" : ""
               }`}
             >
-              <div className="w-12 h-12 rounded-full bg-[#FAF8F5] border border-[#E8E1D5] flex items-center justify-center flex-shrink-0 shadow-sm">
+              <div className="w-12 h-12 rounded-full bg-[#FAF8F5] border border-[#E8E1D5] flex items-center justify-center flex-shrink-0 shadow-sm group-hover:border-[#C5A065] group-hover:bg-[#C5A065]/10 group-hover:scale-105 transition-all duration-300">
                 {item.icon}
               </div>
               <div>
-                <span className="block font-display text-xl sm:text-2xl font-semibold text-[#1E1E1E] leading-tight tracking-tight">
+                <span className="block font-display text-xl sm:text-2xl font-semibold text-[#1E1E1E] leading-tight tracking-tight group-hover:text-[#C5A065] transition-colors">
                   {item.value}
                 </span>
                 <span className="block font-sans text-xs text-[#757067] font-normal mt-0.5">
