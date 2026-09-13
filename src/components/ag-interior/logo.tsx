@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+import { getAssetUrl } from "@/lib/utils";
+
 interface LogoProps {
   className?: string;
   variant?: "gold" | "dark" | "white";
@@ -24,7 +26,7 @@ export function Logo({ className = "", size = "md" }: LogoProps) {
     >
       <div className="relative transition-transform duration-300 group-hover:scale-105">
         <Image
-          src="/images/ag-official-logo-transparent.png"
+          src={getAssetUrl("/images/ag-official-logo-transparent.png")}
           alt="AG Interior Official Logo"
           width={dimensions.width}
           height={dimensions.height}

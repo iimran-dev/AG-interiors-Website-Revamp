@@ -26,6 +26,7 @@ const alexBrush = Alex_Brush({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://aginteriors.in"),
   title: "AG Interior — Design Beyond Spaces. For a Better You.",
   description:
     "Thoughtfully designed residential and commercial interiors that blend aesthetics, functionality and your unique lifestyle. Chennai based, serving across Tamil Nadu.",
@@ -54,6 +55,14 @@ export const metadata: Metadata = {
       "Thoughtfully designed residential and commercial interiors that blend aesthetics, functionality and your unique lifestyle.",
     url: "https://aginteriors.in",
     siteName: "AG Interior",
+    images: [
+      {
+        url: getAssetUrl("/images/ag-official-logo-transparent.png"),
+        width: 1024,
+        height: 1024,
+        alt: "AG Interior Official Logo",
+      },
+    ],
     type: "website",
     locale: "en_US",
   },
@@ -62,6 +71,7 @@ export const metadata: Metadata = {
     title: "AG Interior — Design Beyond Spaces",
     description:
       "Thoughtfully designed residential and commercial interiors that blend aesthetics, functionality and your unique lifestyle.",
+    images: [getAssetUrl("/images/ag-official-logo-transparent.png")],
   },
 };
 

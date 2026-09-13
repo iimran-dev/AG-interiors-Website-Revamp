@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowRight, Play } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { getAssetUrl } from "@/lib/utils";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -30,7 +31,7 @@ export function Hero({ onOpenConsultation, onOpenVideo }: HeroProps) {
   const wallTextRef = useRef<HTMLDivElement>(null);
   const pillRef = useRef<HTMLDivElement>(null);
 
-  const heroImage = "/images/hero-living-room.jpg";
+  const heroImage = getAssetUrl("/images/hero-living-room.jpg");
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

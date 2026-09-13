@@ -2,14 +2,15 @@
 
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import Image from "next/image";
+import { getAssetUrl } from "@/lib/utils";
 
 export function BeforeAfterSection() {
   const [sliderPosition, setSliderPosition] = useState(50);
   const containerRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
 
-  const beforeImage = "/images/transformation-before-aligned.png";
-  const afterImage = "/images/transformation-after.png";
+  const beforeImage = getAssetUrl("/images/transformation-before-aligned.png");
+  const afterImage = getAssetUrl("/images/transformation-after.png");
 
   const updatePosition = useCallback((clientX: number) => {
     if (!containerRef.current) return;
