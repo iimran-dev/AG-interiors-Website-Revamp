@@ -1,62 +1,79 @@
-import { Navbar } from "@/components/v36/navbar";
-import { Hero } from "@/components/v36/hero";
-import { BrandStory } from "@/components/v36/brand-story";
-import { SuiteShowcase } from "@/components/v36/suite-showcase";
-import { ExploreAthens } from "@/components/v36/explore-athens";
-import { DestinationStory } from "@/components/v36/destination-story";
-import { BookingBenefits } from "@/components/v36/booking-benefits";
-import { GuestReviews } from "@/components/v36/guest-reviews";
-import { Experiences } from "@/components/v36/experiences";
-import { Gallery } from "@/components/v36/gallery";
-import { Faq } from "@/components/v36/faq";
-import { Newsletter, InstagramFeed } from "@/components/v36/newsletter-instagram";
-import { Footer } from "@/components/v36/footer";
-import { AIConcierge } from "@/components/v36/concierge";
-import { StickyCTA } from "@/components/v36/sticky-cta";
+"use client";
+
+import React, { useState } from "react";
+import { Navbar } from "@/components/ag-interior/navbar";
+import { Hero } from "@/components/ag-interior/hero";
+import { StatsBar } from "@/components/ag-interior/stats-bar";
+import { AboutSection } from "@/components/ag-interior/about-section";
+import { ServicesSection } from "@/components/ag-interior/services-section";
+import { BeforeAfterSection } from "@/components/ag-interior/before-after-section";
+import { FeaturedProjects } from "@/components/ag-interior/featured-projects";
+import { ProcessSection } from "@/components/ag-interior/process-section";
+import { TestimonialsSection } from "@/components/ag-interior/testimonials-section";
+import { DreamSpaceCTA } from "@/components/ag-interior/dream-space-cta";
+import { Footer } from "@/components/ag-interior/footer";
+import { ConsultationModal } from "@/components/ag-interior/consultation-modal";
+import { VideoModal } from "@/components/ag-interior/video-modal";
 
 export default function Home() {
+  const [consultationOpen, setConsultationOpen] = useState(false);
+  const [videoOpen, setVideoOpen] = useState(false);
+
+  const handleOpenConsultation = () => setConsultationOpen(true);
+  const handleCloseConsultation = () => setConsultationOpen(false);
+
+  const handleOpenVideo = () => setVideoOpen(true);
+  const handleCloseVideo = () => setVideoOpen(false);
+
   return (
-    <div className="flex min-h-screen flex-col bg-background">
-      <Navbar />
+    <div className="flex min-h-screen flex-col bg-[#FAF8F5] text-[#1E1E1E] antialiased selection:bg-[#C5A065] selection:text-[#1E1E1E]">
+      {/* 1. Header & Navigation */}
+      <Navbar onOpenConsultation={handleOpenConsultation} />
 
       <main className="flex-1">
-        {/* DESTINATION → ATMOSPHERE → PROPERTY */}
-        <Hero />
-        {/*<BrandStory />*/}
+        {/* 2. Hero Section with Arched Living Showcase */}
+        <Hero
+          onOpenConsultation={handleOpenConsultation}
+          onOpenVideo={handleOpenVideo}
+        />
 
-        {/* SUITES */}
-        <SuiteShowcase />
+        {/* 3. 4-Column Trust Stats Bar */}
+        <StatsBar />
 
-        {/* ATHENS EXPERIENCE */}
-        <ExploreAthens />
-        
-        {/*<DestinationStory />*/}
+        {/* 4. About AG Interior with Arched Dining Room & Badges */}
+        <AboutSection />
 
-        {/* DIRECT BOOKING BENEFITS */}
-        <BookingBenefits />
+        {/* 5. Complete Interior Solutions (4 Service Cards) */}
+        <ServicesSection onSelectService={() => handleOpenConsultation()} />
 
-        {/* CURATED EXPERIENCES */}
-        <Experiences />
+        {/* 6. Interactive Before & After Transformation Slider */}
+        <BeforeAfterSection />
 
-        {/* GALLERY */}
-        <Gallery />
+        {/* 7. Featured Projects Bento Grid with Category Filter Tabs */}
+        <FeaturedProjects onOpenConsultation={handleOpenConsultation} />
 
-        {/* SOCIAL PROOF */}
-        <GuestReviews />
+        {/* 8. 5-Step Process Roadmap */}
+        <ProcessSection />
 
-        {/* FAQ */}
-        <Faq />
+        {/* 9. Client Testimonial & Atmosphere */}
+        <TestimonialsSection />
 
-        {/* NEWSLETTER + INSTAGRAM */}
-        <Newsletter />
-        <InstagramFeed />
+        {/* 10. Let's Design Your Dream Space (Framed Greenery CTA) */}
+        <DreamSpaceCTA onOpenConsultation={handleOpenConsultation} />
       </main>
 
+      {/* 11. Luxury Arched Footer */}
       <Footer />
 
-      {/* Floating AI Concierge + mobile sticky CTA */}
-      <AIConcierge />
-      <StickyCTA />
+      {/* Interactive Modals */}
+      <ConsultationModal
+        isOpen={consultationOpen}
+        onClose={handleCloseConsultation}
+      />
+      <VideoModal
+        isOpen={videoOpen}
+        onClose={handleCloseVideo}
+      />
     </div>
   );
 }

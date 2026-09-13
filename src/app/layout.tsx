@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Playfair_Display, Alex_Brush } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { getAssetUrl } from "@/lib/utils";
@@ -18,19 +18,27 @@ const playfair = Playfair_Display({
   style: ["normal", "italic"],
 });
 
+const alexBrush = Alex_Brush({
+  variable: "--font-script",
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "V36 Suites Athens — Boutique Luxury in the Heart of Athens",
+  title: "AG Interior — Design Beyond Spaces. For a Better You.",
   description:
-    "Boutique suites in the heart of Athens, designed for those who want to experience the city differently. A quieter way to experience Athens.",
+    "Thoughtfully designed residential and commercial interiors that blend aesthetics, functionality and your unique lifestyle. Chennai based, serving across Tamil Nadu.",
   keywords: [
-    "V36 Suites",
-    "Athens boutique hotel",
-    "luxury suites Athens",
-    "Acropolis hotel",
-    "Syntagma Square",
-    "boutique luxury Athens",
+    "AG Interior",
+    "Interior Designers Chennai",
+    "Luxury Home Interiors",
+    "Modular Kitchens Chennai",
+    "Turnkey Interior Solutions",
+    "False Ceilings",
+    "Wardrobe Design",
   ],
-  authors: [{ name: "V36 Suites Athens" }],
+  authors: [{ name: "AG Interior" }],
   icons: {
     icon: [
       { url: getAssetUrl("/favicon.ico"), sizes: "32x32" },
@@ -41,19 +49,19 @@ export const metadata: Metadata = {
     apple: getAssetUrl("/apple-touch-icon.png"),
   },
   openGraph: {
-    title: "V36 Suites Athens — Boutique Luxury in the Heart of Athens",
+    title: "AG Interior — Design Beyond Spaces. For a Better You.",
     description:
-      "Boutique suites in the heart of Athens, designed for those who want to experience the city differently.",
-    url: "https://v36suites.gr",
-    siteName: "V36 Suites Athens",
+      "Thoughtfully designed residential and commercial interiors that blend aesthetics, functionality and your unique lifestyle.",
+    url: "https://aginteriors.in",
+    siteName: "AG Interior",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "V36 Suites Athens",
+    title: "AG Interior — Design Beyond Spaces",
     description:
-      "Boutique suites in the heart of Athens, designed for those who want to experience the city differently.",
+      "Thoughtfully designed residential and commercial interiors that blend aesthetics, functionality and your unique lifestyle.",
   },
 };
 
@@ -71,7 +79,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href={getAssetUrl("/apple-touch-icon.png")} />
       </head>
       <body
-        className={`${inter.variable} ${playfair.variable} antialiased bg-background text-foreground`}
+        className={`${inter.variable} ${playfair.variable} ${alexBrush.variable} antialiased bg-background text-foreground`}
       >
         {children}
         <Toaster />

@@ -9,6 +9,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
   --font-display: var(--font-playfair);
+  --font-script: var(--font-script);
   --color-ivory: #F8F6F2;
   --color-charcoal: #1E1E1E;
   --color-stone: #ECE9E3;
@@ -137,6 +138,9 @@
   .font-display {
     font-family: var(--font-playfair), Georgia, serif;
     font-feature-settings: "lnum";
+  }
+  .font-script {
+    font-family: var(--font-script), "Alex Brush", cursive;
   }
   .text-balance {
     text-wrap: balance;

@@ -15,11 +15,6 @@ export function getAssetUrl(url: string | null | undefined): string {
   ) {
     return url;
   }
-  const basePath = "/v36suites";
-  const cleanUrl = url.startsWith("/") ? url : `/${url}`;
-  if (cleanUrl.startsWith(basePath)) {
-    return cleanUrl;
-  }
-  return `${basePath}${cleanUrl}`;
+  return url.startsWith("/") ? url : `/${url}`;
 }
 
